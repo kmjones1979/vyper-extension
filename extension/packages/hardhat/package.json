@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "setup-vyper": "node scripts/setup-vyper.js",
+    "postinstall": "yarn setup-vyper"
+  },
   "devDependencies": {
     "@nomiclabs/hardhat-vyper": "^3.0.8"
   }
