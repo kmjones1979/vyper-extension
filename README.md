@@ -16,7 +16,7 @@ A Scaffold-ETH 2 extension that replaces Solidity with Vyper for smart contract 
 Create a new Scaffold-ETH 2 project with Vyper support:
 
 ```bash
-npx create-eth@latest -e {your-github-username}/{vyper-extension-repo}
+npx create-eth@latest -e kmjones1979/vyper-extension
 ```
 
 ```bash
