@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@nomiclabs/hardhat-vyper": "^3.0.8"
+  }
+}
