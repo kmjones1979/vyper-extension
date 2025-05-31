@@ -13,10 +13,10 @@ A Scaffold-ETH 2 extension that replaces Solidity with Vyper for smart contract 
 
 ## 🚀 Quick Start
 
-Create a new Scaffold-ETH 2 project with Vyper support:
+Create a new Scaffold-ETH 2 project with Vyper support using the **beta** version:
 
 ```bash
-npx create-eth@latest -e kmjones1979/vyper-extension
+npx create-eth@beta -e {your-github-username}/{vyper-extension-repo}:beta
 ```
 
 ```bash
@@ -66,13 +66,13 @@ That's it! Your Vyper dApp is ready to go! 🎉
 
 ### "cannot find artifact YourContract" Error
 
-This error occurs when the Vyper plugin isn't properly configured. The extension should handle this automatically, but if you encounter issues:
+This error occurs when the Vyper plugin isn't properly configured. The beta template system should handle this automatically, but if you encounter issues:
 
-1. **Verify the setup ran correctly**:
+1. **Verify the plugin is installed**:
 
 ```bash
 cd packages/hardhat
-yarn setup-vyper
+yarn list @nomiclabs/hardhat-vyper
 ```
 
 2. **Check the imports** in `hardhat.config.ts`:
@@ -129,13 +129,15 @@ yarn test
 
 ## ⚙️ How It Works
 
-The extension uses a combination of:
+The extension uses the **modern beta template system** with:
 
-1. **Template Args**: Adds the Vyper plugin import via `hardhat.config.ts.args.mjs`
-2. **Setup Script**: Automatically adds Vyper configuration section after install
-3. **Post-install Hook**: Runs setup script automatically via `package.json`
+1. **Template Args**: Direct configuration injection via `hardhat.config.ts.args.mjs`
+   - `preConfigContent`: Adds the Vyper plugin import
+   - `configOverrides`: Injects the Vyper configuration section
+2. **No Setup Scripts Needed**: Configuration is handled automatically by the template system
+3. **Clean Integration**: Zero post-install hooks or manual configuration
 
-This ensures seamless integration with Scaffold-ETH 2's build system.
+This provides seamless, automatic integration with Scaffold-ETH 2's build system.
 
 ## 🚀 Publishing Your Extension
 
@@ -150,7 +152,7 @@ npx create-eth@latest -e {your-github-username}/{vyper-extension-repo}
 
 The extension is now fully compatible with Scaffold-ETH 2's extension system and provides a complete Vyper development environment out of the box!
 
-## �� Vyper Resources
+## 📖 Vyper Resources
 
 - [Vyper Documentation](https://docs.vyperlang.org/)
 - [Vyper by Example](https://vyper-by-example.org/)
